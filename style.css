@@ -1,0 +1,61 @@
+/* projet.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styles pour les inputs */
+input[type="text"], 
+input[type="number"], 
+input[type="button"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px; /* Largeur fixe pour les champs de texte */
+    max-width: 100%; /* S'assurer qu'ils ne débordent pas */
+}
+
+input[type="button"] {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    width: 150px; /* Largeur fixe pour le bouton */
+}
+
+input[type="button"]:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+#t {
+    background-color: #fff;
+}

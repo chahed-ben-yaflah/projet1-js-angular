@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=DBSOTu-5MSXWWvbvnEuXr2kvdBsEjIG1D5rTLRdKz6lyS5dAhR30flNTNcv_cl5yskWXdl0hIW2sR5xAkCphZ6k67kRaWojhH85P7kV6faw0t-cKa3vgF9QbaCm7HS7937btJTUSBmwZJ1ToNr5xDNf3MGVWIBeBa3n0uXdFGYn4uRKMrH1PxAojqiL3BxAXvpMz5epSnanJsAsl0RfP-iLhXz9M4I5_4e5FbxY5Vmm5bGBmRx2Yf7QQbG3BAYcb777rYkFi3Hrzr5EaBM-oMF6uieyBiNSBrRSlOafs-XeKK46xoqt6AtxIVDVCSD25f7V7VLyi2imjwILPCTcM9PIk7FTiW-5LY6vBM1IMc3YPozm51VX8vvSdu_ZtH8tNw8ZEpGdhsHwE9Bv2j8OIOxCrdwlc3NA0dbncb_BnvvcFLLDIhIa7zAe9HPCWnOLq85oeFcLN3vlLnYPUZzPvFR32bdgdGNWub_0teQUtQSUeJSQmkg6udyBwuOudYou8ZhGU8Lx4GhQ4Ox3Bq_TfZ_ppBctHEE2ydbslchFd2gsHNEmRmm__LCXR2otZAekZf3UGtJfJRXsIvtmC3Vidi5fVmwTTc3ZyMhYp07eheqvSa32SZN26X_8XTinumykdZ_1YT3PYiL5vP9FFlUK7PFbZz4VcCLbY0sNi6CbYcL9Yw90utDk1f7lSPM_npGr7fi2H9EStHjtC6h9QHdKpPI-GY6y3n0XdncPoIuMrrVIvUEy0uy3LU7PVPOnb38_8zo8R2b45iL8EofyHIaMh2dm1A7B-rtRNAb9R0kb-0NjbovwNIY9q_NnPVYMzHALNEHswvvukuriRQ2A0J_m5KUbdziqiUCgHtPW9B3Y55Mifg23EbB1RIpZ9Q9Exmjex1SV3rFhKMgVA_Cg-eKFGGA3HWDywQ8oSvgST8n6M1dMsI038FZMND14sBrRvz-Jti2d3lHBTZ2WCH8OyE1FtJ1jO9HCOAHh3l7qOH8FEu8oYWMephLAeCg6VMHjNFjlAmuU_L_Q64CyzAN0WoXrlwEFQZKYYvN4GRDGEWER_hzGR02toZcRNKLzOaM3A-qlWy7ID5rw9W45ktge_zBJ4-1NpmFhTBwz95uzGKmLE2w2qg_bXnoQoneV5rmn6ifEQB1EHHCU35mIWxBNeOczBtStMaHgZ8jVtUu-brEzmtFKou_Wr5OBj0l7fEZ7EbOpP08KbKCt4-s8IiptXYuoZSGWK-l53m7a24Gqn6tZKTpI2WFyXSzx1J9VkplBEIX_2YMoWe1gEKJVF0j1y9KaVeJe-pjEXHZw7X0TNv8gZMSwAF22AKNNhRlg_ft6w-QrKoUP0xAERezoAmLPMeJqBYFjxFotlkcAJZsjKFY4SyROZ8lOoYQ9uaY_i_hfsg_kS9S9r2y9zbdXStgpnBysiC9A7M6oa6X-jlboXE0P5BuFNmNiskavaUmkN07Wq3jQIwJCkOe7_jFjTB0dT5XMUG3SwuBcquyCjTUbkSdZnM8vJ4g7lmOQqy7oqwLlDRtf54rcbi-niQmY6kAqeWhr-2LhrHD6pGClkVGsRZzl-PipLwTmb54-bWuLgPkpjYChIYr9aZp63qQOExacHY2iu-w" nonce="c1d62948d3e91187ae7f047ab6297ca1" charset="UTF-8"></script></head>
+<body onload="lister()">
+    <input type="hidden" id="id"> 
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="auteur" placeholder="Auteur">
+    <input type="number" id="prix" placeholder="Prix">
+    <input type="button" id="b" value="Ajouter" onclick="ajouter()">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Prix</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody id="t">
+        </tbody>
+    </table>
+    <script>
+        var book = [
+    {id: 1, title: "انهيار", auteur: "احمد ساسي", prix: 20},
+    {id: 2, title: "ولادة الشيطاانسان", auteur: "احمد ساسي", prix: 20},
+    {id: 3, title: "فن الامبالاة", auteur: "مارك مانسون", prix: 20}];
+    function lister() {
+        const tab = document.getElementById("t");
+        tab.innerHTML = "";
+
+        for (let i = 0; i < book.length; i++) {
+            const lig = '<tr>' +
+            '<td>' + book[i].id + '</td>' +
+            '<td>' + book[i].title + '</td>' +
+            '<td>' + book[i].auteur + '</td>' +
+            '<td>' + book[i].prix + '</td>' +
+            '<td><input type="button" value="Editer" onclick="editer(' + book[i].id + ')"></td>' +
+            '<td><input type="button" value="Supprimer" onclick="supp(' + book[i].id + ')"></td>' +
+            '</tr>';
+            tab.innerHTML += lig;
+    }
+}
+
+    function ajouter() {
+       const id = document.getElementById("id").value;
+       const title = document.getElementById("title").value;
+       const auteur = document.getElementById("auteur").value;
+       const prix = parseFloat(document.getElementById("prix").value);
+
+       if (title && auteur && !isNaN(prix)) {
+         if (id) {
+            // Mode édition
+            const index = book.findIndex(b => b.id == id);
+            book[index].title = title;
+            book[index].auteur = auteur;
+            book[index].prix = prix;
+
+            document.getElementById("b").value = "Ajouter"; 
+        } else {
+            // Mode ajout
+            const newId = book.length ? book[book.length - 1].id + 1 : 1; // Gérer les IDs
+            book.push({id: newId, title, auteur, prix});
+        }
+        lister();
+        vider(); // Réinitialiser le formulaire après ajout ou édition
+    } else {
+        alert("Les valeurs sont invalides");
+    }
+}
+
+    function editer(id) {
+        const infos = book.find(b => b.id === id);
+        document.getElementById("id").value = infos.id;
+        document.getElementById("title").value = infos.title;
+        document.getElementById("auteur").value = infos.auteur;
+        document.getElementById("prix").value = infos.prix;
+        document.getElementById("b").value = "Valider"; // Changer le bouton pour indiquer qu'on est en mode édition
+}
+    function supp(id) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer ce livre ?")) {
+        book = book.filter(b => b.id !== id);
+        lister();
+    }
+}
+
+    function vider() {
+       document.getElementById("id").value = "";
+       document.getElementById("title").value = "";
+       document.getElementById("auteur").value = "";
+       document.getElementById("prix").value = "";
+}
+    </script>
+</body>
+</html>
